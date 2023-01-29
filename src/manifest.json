@@ -1,0 +1,20 @@
+{
+    "name": "Youtube Lights",
+    "version": "1.0.0",
+    "description": "Enhances Youtube's cinema lights mode",
+    "manifest_version": 3,
+    "author": "Jérôme Rascle",
+    "action":{
+        "default_popup": "/popup/html/index.html",
+        "default_title": "Youtube Lights"
+    },
+    "permissions":[
+        "storage",
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "background":{
+        "service_worker": "background/js/serviceWorker.js"
+    }
+}
