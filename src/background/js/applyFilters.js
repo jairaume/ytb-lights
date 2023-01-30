@@ -19,6 +19,7 @@ async function applyFilters() {
     var parameters = await getParametersFromGoogleStorage().then((result) => {
         return result;
     });
+    console.log(parameters);
 
     // get the video element
     let cinematics = document.getElementById("cinematics").firstChild;
@@ -34,13 +35,17 @@ async function applyFilters() {
     }
 
     // make it brighter
-    cinematics.style.filter = "brightness(",
-    translate(parameters.colors.brightness),
-    ") contrast(",
-    translate(parameters.colors.contrast),
-    ") saturate(",
-    translate(parameters.colors.saturation),
-    ")";
+    var newColors = [
+        translate(parameters.colors.brightness),
+        translate(parameters.colors.contrast),
+        translate(parameters.colors.saturation)
+    ]
+    console.log(newColors);
+    var newColors = newColors.map((value) => {
+        return value.toString();
+    });
+    var style = "brightness(" + newColors[0] + ") contrast(" + newColors[1] + ") saturate(" + newColors[2] + ")";
+    cinematics.style.filter = style;
     
 }
 
