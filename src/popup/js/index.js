@@ -1,13 +1,15 @@
-// make all borders of the page red
-document.body.style.border = "5px solid red";
 
-chrome.runtime.onMessage.addListener(gotMessage);
-function gotMessage(message, sender, sendResponse) {
-    console.log(message.txt);
-}
+// This is the code that runs in the popup
 
-// send message to background script passing on/off and a quantity
+let checkbox = document.getElementById("checkbox").parentElement;
+checkbox.addEventListener("change", async() => {
+    var full = await chrome.storage.sync.get(['on']);
+    chrome.storage.sync.set({ on: !full.on });
 
-document.getElementById("btn").addEventListener("click", () => {
-    chrome.runtime.sendMessage({on: true, amount: 5});
+    if(!full.on){
+        checkbox.classList.add("active");
+    }
+    else{
+        checkbox.classList.remove("active");
+    }
 });

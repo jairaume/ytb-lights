@@ -1,0 +1,170 @@
+// Define color variables : 
+// colors
+$primary: red;
+$bg : #0F0F0F;
+$on-bg : #dddddd;
+$grey: #404040; 
+// border radius
+$medium-radius: 1rem;
+
+html{
+    background-color: $bg;
+    color: $on-bg;
+    width:20rem;
+}
+
+body{
+    margin: 0;
+    width:100%;
+    height:100%;
+
+    #global-cont{
+        display: flex;
+        flex-direction: column;
+        
+        height: 100%;
+    }
+}
+
+div#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding:0  1rem;
+    background-color: lighten($bg,10);
+    color: $on-bg;
+}
+div.switch-container{
+    &>*{
+        cursor:pointer;
+    }
+    .switch {
+        display: inline-block;
+        font-size: 20px; /* 1 */
+        height: 1em;
+        width: 2em;
+        background: $grey;
+        border-radius: 1em;
+        input {
+            cursor:pointer;
+            position: absolute;
+            opacity: 0;
+        }
+        div {
+            height: 1em;
+            width: 1em;
+            border-radius: 1em;
+            background: $on-bg;
+            box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.4);
+            -webkit-transition: all 300ms;
+            -moz-transition: all 300ms;
+                    transition: all 300ms;
+        }
+        input:checked + div {
+            -webkit-transform: translate3d(100%, 0, 0);
+               -moz-transform: translate3d(100%, 0, 0);
+                    transform: translate3d(100%, 0, 0);
+        }
+    }
+    & .active {
+        background: darken($primary,30);
+        div{
+            background: $primary;
+        }
+    }
+}
+
+div#content{
+    margin:0 1rem;
+
+    .setting{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        padding:0 1rem;
+        margin-bottom:1rem;
+
+        background-color: lighten($bg,10);
+        color: $on-bg;
+        border-radius: $medium-radius;
+        border:.2rem solid transparent;
+        &:hover{
+            border:.2rem solid lighten($bg,20);
+        }
+        .setting-title{
+            display:flex;
+            flex-direction:column;
+            justify-content: space-between;
+            margin:.5rem 0;
+            &>*{
+                margin:.1rem;
+            }
+            p{
+                color: darken($on-bg,20);
+            }
+        }
+        &.colors{
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom:1rem;
+        }
+    }
+}
+div.slider-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    width:100%;
+    i{
+        font-size:1.5rem;
+        width:2rem;
+        height:2rem;
+        text-align: center;
+        line-height: 2rem;
+    }
+    .slider{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        input[type=range]{
+            width:100%;
+            height:2rem;
+            cursor: pointer;
+            margin:0;
+            background: transparent;
+            accent-color: $on-bg;
+            -webkit-appearance: none;
+            &::-webkit-slider-runnable-track{
+                background: lighten($bg,30);
+                border-radius: 1rem;
+            }
+        }
+        p{
+            margin:0;
+            color: darken($on-bg,20);
+        }
+    }
+}
+
+
+
+
+
+div#footer{
+    width:100%;
+    text-align: center;
+    a{
+        color: $primary;
+    }
+}
+
+// special classes

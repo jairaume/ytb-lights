@@ -4,18 +4,62 @@
     <title>Youtube Lights</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./../style/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Youtube Lights</h1>
+    <div id="global-cont">
+        <div id="header">
+            <h1><span class="primary">Youtube</span> Lights</h1>
         </div>
-        <div class="content">
-            <button id="btn">Turn on</button>
+        <div id="content">
+
+            <div class="setting fullscreen">
+                <div class="setting-title">
+                    <h2>Fullscreen</h2>
+                    <p>Make the cinema lights fullscreen on the page.</p>
+                </div>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox"/>
+                        <div></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting colors">
+                <div class="setting-title">
+                    <h2>Colors</h2>
+                    <p>Modify the colors and contrast of the cinema lights.</p>
+                </div>
+
+                <div class="slider-cont">
+                    <i class="slider-icon fa fa-sun-o"></i>
+                    <div class="slider brightness">
+                        <input type="range" min="0" max="10" value="5" id="brightness">
+                        <p class="slider-title">Brightness</p>
+                    </div>
+                </div>
+
+                <div class="slider-cont">
+                    <i class="slider-icon fa fa-adjust"></i>
+                    <div class="slider contrast">
+                        <input type="range" min="0" max="10" value="5" id="contrast">
+                        <p class="slider-title">Contrast</p>
+                    </div>
+                </div>
+
+                <div class="slider-cont">
+                    <i class="slider-icon fa fa-thermometer-half"></i>
+                    <div class="slider saturation">
+                        <input type="range" min="0" max="10" value="5" id="saturation">
+                        <p class="slider-title">Saturation</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer">
-            <p>Created by <a href="">@jairaume</a></p>
+        <div id="footer">
+            <p>Created by <a href="https://github.com/jairaume">@jairaume</a></p>
         </div>
     </div>
 </body>
