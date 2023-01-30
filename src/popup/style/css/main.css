@@ -14,7 +14,6 @@ body #global-cont {
   flex-direction: column;
   height: 100%;
 }
-
 div#header {
   display: flex;
   flex-direction: row;
@@ -34,8 +33,9 @@ div.switch-container .switch {
   font-size: 20px; /* 1 */
   height: 1em;
   width: 2em;
-  background: #404040;
+  background: #616161;
   border-radius: 1em;
+  box-shadow: inset 0 0.1em 0.3em rgba(0, 0, 0, 0.4);
 }
 div.switch-container .switch input {
   cursor: pointer;
@@ -58,7 +58,7 @@ div.switch-container .switch input:checked + div {
   transform: translate3d(100%, 0, 0);
 }
 div.switch-container .active {
-  background: #660000;
+  background: #990000;
 }
 div.switch-container .active div {
   background: red;
@@ -79,9 +79,11 @@ div#content .setting {
   color: #dddddd;
   border-radius: 1rem;
   border: 0.2rem solid transparent;
+  transition: 0.3s;
 }
 div#content .setting:hover {
   border: 0.2rem solid #424242;
+  transition: 0.3s;
 }
 div#content .setting .setting-title {
   display: flex;
@@ -129,12 +131,46 @@ div.slider-cont .slider input[type=range] {
   cursor: pointer;
   margin: 0;
   background: transparent;
-  accent-color: #dddddd;
+  transition: 0.3s;
   -webkit-appearance: none;
+  appearance: none;
 }
 div.slider-cont .slider input[type=range]::-webkit-slider-runnable-track {
-  background: #5c5c5c;
+  background: #616161;
   border-radius: 1rem;
+  height: 0.2rem;
+  transition: 0.3s;
+}
+div.slider-cont .slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #c4c4c4;
+  cursor: pointer;
+  transition: 0.3s;
+  vertical-align: middle;
+  margin-top: -0.4rem;
+}
+div.slider-cont .slider input[type=range]:hover, div.slider-cont .slider input[type=range]:focus {
+  transition: 0.3s;
+}
+div.slider-cont .slider input[type=range]:hover::-webkit-slider-runnable-track, div.slider-cont .slider input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #7b7b7b;
+  transition: 0.3s;
+}
+div.slider-cont .slider input[type=range]:hover::-webkit-slider-thumb, div.slider-cont .slider input[type=range]:focus::-webkit-slider-thumb {
+  background: #f7f7f7;
+  transition: 0.3s;
+}
+div.slider-cont .slider input[type=range]:active::-webkit-slider-runnable-track {
+  background: #990000;
+  transition: 0.3s;
+}
+div.slider-cont .slider input[type=range]:active::-webkit-slider-thumb {
+  background: red;
+  transition: 0.3s;
 }
 div.slider-cont .slider p {
   margin: 0;
@@ -144,6 +180,9 @@ div.slider-cont .slider p {
 div#footer {
   width: 100%;
   text-align: center;
+}
+div#footer p {
+  margin: 0 0 1rem 0;
 }
 div#footer a {
   color: red;

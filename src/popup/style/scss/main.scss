@@ -3,7 +3,7 @@
 $primary: red;
 $bg : #0F0F0F;
 $on-bg : #dddddd;
-$grey: #404040; 
+$grey: #616161; 
 // border radius
 $medium-radius: 1rem;
 
@@ -23,6 +23,9 @@ body{
         flex-direction: column;
         
         height: 100%;
+        &.active{
+            //background: linear-gradient(0deg, $bg, lighten($bg,10));
+        }
     }
 }
 
@@ -47,6 +50,8 @@ div.switch-container{
         width: 2em;
         background: $grey;
         border-radius: 1em;
+        box-shadow: inset 0 0.1em 0.3em rgba(0,0,0,0.4);
+
         input {
             cursor:pointer;
             position: absolute;
@@ -69,7 +74,7 @@ div.switch-container{
         }
     }
     & .active {
-        background: darken($primary,30);
+        background: darken($primary,20);
         div{
             background: $primary;
         }
@@ -93,8 +98,10 @@ div#content{
         color: $on-bg;
         border-radius: $medium-radius;
         border:.2rem solid transparent;
+        transition: .3s;
         &:hover{
             border:.2rem solid lighten($bg,20);
+            transition: .3s;
         }
         .setting-title{
             display:flex;
@@ -141,11 +148,48 @@ div.slider-cont{
             cursor: pointer;
             margin:0;
             background: transparent;
-            accent-color: $on-bg;
+            transition: .3s;
             -webkit-appearance: none;
+            appearance: none;
             &::-webkit-slider-runnable-track{
-                background: lighten($bg,30);
+                background: $grey;
                 border-radius: 1rem;
+                height:.2rem;
+                transition: .3s;
+            }
+            &::-webkit-slider-thumb{
+                -webkit-appearance: none;
+                appearance: none;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background: darken($on-bg,10);
+                cursor: pointer;
+                transition: .3s;
+                vertical-align: middle;  
+                margin-top:-.4rem;          
+            }
+
+            &:hover, &:focus{
+                transition: .3s;
+                &::-webkit-slider-runnable-track{
+                    background: lighten($grey,10);
+                    transition: .3s;
+                }
+                &::-webkit-slider-thumb{
+                    background: lighten($on-bg,10);
+                    transition: .3s;
+                }
+            }
+            &:active{
+                &::-webkit-slider-runnable-track{
+                    background: darken($primary,20);
+                    transition: .3s;
+                }
+                &::-webkit-slider-thumb{
+                    background: $primary;
+                    transition: .3s;
+                }
             }
         }
         p{
@@ -162,6 +206,9 @@ div.slider-cont{
 div#footer{
     width:100%;
     text-align: center;
+    p{
+        margin:0 0 1rem 0;
+    }
     a{
         color: $primary;
     }
