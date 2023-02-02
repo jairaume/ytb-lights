@@ -23,9 +23,6 @@ body{
         flex-direction: column;
         
         height: 100%;
-        &.active{
-            //background: linear-gradient(0deg, $bg, lighten($bg,10));
-        }
     }
 }
 
@@ -38,6 +35,10 @@ div#header{
     padding:0  1rem;
     background-color: lighten($bg,10);
     color: $on-bg;
+    text-align: center;
+    h1{
+        width: 100%;
+    }
 }
 div.switch-container{
     &>*{
@@ -99,9 +100,12 @@ div#content{
         border-radius: $medium-radius;
         border:.2rem solid transparent;
         transition: .3s;
+
+        
         &:hover{
             border:.2rem solid lighten($bg,20);
             transition: .3s;
+            transform: scale(1.01);
         }
         .setting-title{
             display:flex;
@@ -112,7 +116,7 @@ div#content{
                 margin:.1rem;
             }
             p{
-                color: darken($on-bg,20);
+                color: $grey;
             }
         }
         &.colors{
@@ -194,7 +198,7 @@ div.slider-cont{
         }
         p{
             margin:0;
-            color: darken($on-bg,20);
+            color: $grey;
         }
     }
 }

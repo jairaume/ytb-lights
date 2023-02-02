@@ -14,6 +14,7 @@ body #global-cont {
   flex-direction: column;
   height: 100%;
 }
+
 div#header {
   display: flex;
   flex-direction: row;
@@ -23,6 +24,10 @@ div#header {
   padding: 0 1rem;
   background-color: #292929;
   color: #dddddd;
+  text-align: center;
+}
+div#header h1 {
+  width: 100%;
 }
 
 div.switch-container > * {
@@ -84,6 +89,7 @@ div#content .setting {
 div#content .setting:hover {
   border: 0.2rem solid #424242;
   transition: 0.3s;
+  transform: scale(1.01);
 }
 div#content .setting .setting-title {
   display: flex;
@@ -95,7 +101,7 @@ div#content .setting .setting-title > * {
   margin: 0.1rem;
 }
 div#content .setting .setting-title p {
-  color: #aaaaaa;
+  color: #616161;
 }
 div#content .setting.colors {
   flex-direction: column;
@@ -174,7 +180,7 @@ div.slider-cont .slider input[type=range]:active::-webkit-slider-thumb {
 }
 div.slider-cont .slider p {
   margin: 0;
-  color: #aaaaaa;
+  color: #616161;
 }
 
 div#footer {
