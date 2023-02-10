@@ -21,8 +21,7 @@ checkbox.addEventListener("change", async() => {
 Array.from(sliders).forEach((slider) => {
     slider = slider.firstElementChild;
     
-    slider.addEventListener("change", async() => {
-        console.log("change on slider", slider.id, " : ", slider.value);
+    slider.addEventListener("input", async() => {
         var data = await chrome.storage.sync.get(['colors']);
         data.colors[slider.id] = parseInt(slider.value);
         chrome.storage.sync.set({ colors : data.colors})
@@ -32,7 +31,6 @@ Array.from(sliders).forEach((slider) => {
 
 
 function updateUI(data){
-    console.log("updateUI", data);
     if(data.on){
         checkbox.classList.add("active");
         checkbox.firstElementChild.checked = true;

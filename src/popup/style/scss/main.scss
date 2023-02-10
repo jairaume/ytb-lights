@@ -36,8 +36,54 @@ div#header{
     background-color: lighten($bg,10);
     color: $on-bg;
     text-align: center;
-    h1{
-        width: 100%;
+
+    #logoContainer{
+        height:4rem;
+        width:4rem;
+        position: relative;
+        .cord{
+            position: absolute;
+            z-index:15;
+            width: 0;
+            height: 1.5rem;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+    
+            border: 1px solid #FFFFFF;
+        }
+        .lamp{
+            /* Rectangle 3 */
+            position: absolute;
+            z-index: 10;
+            width: 2rem;
+            height: 1rem;
+            top: 1rem;
+            left: 50%;
+            transform: translate(-50%, 0);
+    
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 1rem 1rem 0px 0px;
+        }
+        .light{
+            /* Polygon 2 */
+            position: absolute;
+            z-index: 5;
+            width: 2rem;
+            height: 2rem;
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+            top: 1.7rem;
+            left: 50%;
+            transform: translate(-50%, 0);
+    
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+            background-size: 100% 150%;
+            animation : lightmoving 5s infinite;
+        }
+
+
     }
 }
 div.switch-container{
@@ -218,4 +264,9 @@ div#footer{
     }
 }
 
-// special classes
+// special classes and animations
+@keyframes lightmoving {
+    0%{background-position:5% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:5% 0%}
+}

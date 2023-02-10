@@ -19,8 +19,6 @@ async function applyFilters() {
     var parameters = await getParametersFromGoogleStorage().then((result) => {
         return result;
     });
-    console.log(parameters);
-
     // get the video element
     let cinematics = document.getElementById("cinematics").firstChild;
     if(parameters.on){
@@ -40,7 +38,6 @@ async function applyFilters() {
         translate(parameters.colors.contrast),
         translate(parameters.colors.saturation)
     ]
-    console.log(newColors);
     var newColors = newColors.map((value) => {
         return value.toString();
     });
