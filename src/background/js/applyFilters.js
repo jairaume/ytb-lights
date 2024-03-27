@@ -22,6 +22,8 @@ async function applyFilters() {
     // get the video element
     let cinematics = document.getElementById("cinematics").firstChild;
     if(parameters.on){
+        cinematics.style.maxWidth = "none";
+        cinematics.style.maxHeight = "none";
         cinematics.style.width = "100vw";
         cinematics.style.height = "100vh";
         cinematics.style.position = "fixed";
